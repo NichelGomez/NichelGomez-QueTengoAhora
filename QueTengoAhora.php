@@ -38,3 +38,9 @@ $horario = array(
             array( 5 => ("Modulo" => "Desarrollo web en entorno servidor", "Docente" => "Sergio Ramos Suarez", "Aula" => "201")),
             array( 6 => ("Modulo" => "Desarrollo web en entorno servidor", "Docente" => "Sergio Ramos Suarez", "Aula" => "201")))
 );
+
+
+function mostrarHorario()
+{
+
+};
