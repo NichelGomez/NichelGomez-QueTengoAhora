@@ -54,11 +54,14 @@ function mostrarHorario()
                                 echo("<br>");
                         }
                 }
-        
-        
-        
-        
-        
-        
         }
+};
+
+
+function queAsignatura($queDia, $queHora,$queMinuto){
+
+
+
+
+
 };
