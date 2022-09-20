@@ -38,7 +38,7 @@ $horario = array(
             6 => array("Modulo" => "Desarrollo web en entorno servidor", "Docente" => "Sergio Ramos Suarez", "Aula" => "201")
 ));
 
-//function mostrarHorario()
+function mostrarHorario()
 {
         foreach($horario as $iden => $valores1){
                 echo("<br>");
