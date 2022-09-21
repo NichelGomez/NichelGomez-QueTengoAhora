@@ -182,8 +182,8 @@ function queClaseToca($queHora, $queMinuto)
         }
 };
 
-
-/**queAsignatura("Lunes", 10, 12);
+/**Algunas pruebas para comprobar la segunda función
+queAsignatura("Lunes", 10, 12);
 queAsignatura("Miercoles", 10, 50);
 queAsignatura("Viernes", 8, 12);
 queAsignatura("Martes", 16, 51);
@@ -192,6 +192,6 @@ queAsignatura("Domingo", 10, 67);
 queAsignatura("Sabado", 10, 30);
 queAsignatura("Domingo", 10, 15);*/
 
-//date(N) Dia de la semana del 1(Lunes) al 7(Domingo)
-//date(H) Hora desde 00 hasta 23 
-//date(i) Minutos con cero inicial 
+//date("N") Dia de la semana del 1(Lunes) al 7(Domingo)
+//date("H") Hora desde 00 hasta 23 
+//date("i") Minutos con cero inicial 
