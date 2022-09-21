@@ -195,3 +195,36 @@ queAsignatura("Domingo", 10, 15);*/
 //date("N") Dia de la semana del 1(Lunes) al 7(Domingo)
 //date("H") Hora desde 00 hasta 23 
 //date("i") Minutos con cero inicial 
+
+function queTengoAhora()
+{
+        global $horario;
+        $horaCompleta = (date("H") * 100) + date("i");
+        if(date("N") == 1)
+        {
+                print_r($horario["Lunes"][$horaCompleta]);
+                print_r("<br>");
+        }
+        elseif (date("N") == 2) 
+        {
+                print_r($horario["Martes"][$horaCompleta]);
+                print_r("<br>");
+        }
+        elseif (date("N") == 3) 
+        {
+                print_r($horario["Miercoles"][$horaCompleta]);
+                print_r("<br>");
+        }
+        elseif (date("N") == 4) 
+        {
+                print_r($horario["Jueves"][$horaCompleta]);
+                print_r("<br>");
+        }
+        elseif (date("N") == 5) 
+        {
+                print_r($horario["Viernes"][$horaCompleta]);
+                print_r("<br>");
+        }
+};
+
+queTengoAhora();
