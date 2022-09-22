@@ -38,6 +38,7 @@ $horario = array(
             6 => array("Modulo" => "Desarrollo web en entorno servidor", "Docente" => "Sergio Ramos Suarez", "Aula" => "201")
 ));
 
+//Función que muestra el horario completo
 function mostrarHorario()
 {
         global $horario;
@@ -59,8 +60,7 @@ function mostrarHorario()
                 }
         }
 };
-
-//mostrarHorario();
+/* Primera función que dada un dia, una hora y un minuto te devuelve que asignatura hay en ese momento, esta función es sustituida más adelante pero la dejo comentada en caso de ser necesaria después.
 function queAsignatura($queDia, $queHora, $queMinuto){
         global $horario;
         $horaFinal = queClaseToca($queHora, $queMinuto);
@@ -119,8 +119,9 @@ function queAsignatura($queDia, $queHora, $queMinuto){
                                         print_r("La hora o minutos introducidos no son correctos o bien no hay clase");
                                         print_r("<br>");
                                 }
-};
+};*/
 
+/*Función auxiliar que me ayuda a comprobar si la hora introducida es correcta, al haber usado posteriormente la función "date("H")" y la función "date("i")" esta función pasa a ser inutil igual que la siguiente.
 function comprobarHora($queHora){
         if($queHora < 24 && $queHora >= 0)
         {
@@ -130,8 +131,9 @@ function comprobarHora($queHora){
         {
                 return false;
         }
-};
+};*/
 
+/*Al igual que la función de comprobarHora como he cambiado la forma en que calculo el día no es necesario verificar si los minutos son correctos ya que siempre lo van a ser.
 function comprobarMinuto($queMinuto){
         if($queMinuto < 60 && $queMinuto >= 0)
         {
@@ -142,11 +144,11 @@ function comprobarMinuto($queMinuto){
                 return false;
         }
 };
+*/
 
+//Función que pasados una hora y un minuto nos calcula que posicion en el array de el horario estamos.
 function queClaseToca($queHora, $queMinuto)
 {
-
-        if(comprobarHora($queHora) && comprobarMinuto($queMinuto))
         {
                 $horaYMinutos = ($queHora * 100) + $queMinuto;
                 if($horaYMinutos < 855 && $horaYMinutos >= 800)
@@ -173,7 +175,7 @@ function queClaseToca($queHora, $queMinuto)
                 {
                         return 6;
                 }
-                elseif($horaYMinutos < 1045 && $horaYMinutos >= 1115)
+                elseif($horaYMinutos < 1115 && $horaYMinutos >= 1045)
                 {
                         return 7;
                 }
@@ -196,35 +198,56 @@ queAsignatura("Domingo", 10, 15);*/
 //date("H") Hora desde 00 hasta 23 
 //date("i") Minutos con cero inicial 
 
+
+//Función que nos muestra la asignatura que tenemos en el horario actual.
 function queTengoAhora()
 {
         global $horario;
-        $horaCompleta = (date("H") * 100) + date("i");
-        if(date("N") == 1)
+
+        if(queClaseToca(date("H") - 1, date("i")) != 8)
         {
-                print_r($horario["Lunes"][$horaCompleta]);
-                print_r("<br>");
+                if(date("N") == 1)
+                {
+                        print_r($horario["Lunes"][queClaseToca(date("H") - 1, date("i"))]);
+                        print_r("<br>");
+                }
+                elseif (date("N") == 2) 
+                {
+                        print_r($horario["Martes"][queClaseToca(date("H") - 1, date("i"))]);
+                        print_r("<br>");
+                }
+                elseif (date("N") == 3) 
+                {
+                        print_r($horario["Miercoles"][queClaseToca(date("H") - 1, date("i"))]);
+                        print_r("<br>");
+                }
+                elseif (date("N") == 4) 
+                {
+                        print_r($horario["Jueves"][queClaseToca(date("H") - 1, date("i"))]);
+                        print_r("<br>");
+                }
+                elseif (date("N") == 5) 
+                {
+                        print_r($horario["Viernes"][queClaseToca(date("H") - 1, date("i"))]);
+                        print_r("<br>");
+                }
+                elseif(date("N") == 6)
+                {
+                        print_r("Los sabados no hay clase");
+                        print_r("<br>");
+                }
+                else
+                {
+                        print_r("Los domingos no hay clase");
+                        print_r("<br>");
+                }
         }
-        elseif (date("N") == 2) 
+        else
         {
-                print_r($horario["Martes"][$horaCompleta]);
-                print_r("<br>");
-        }
-        elseif (date("N") == 3) 
-        {
-                print_r($horario["Miercoles"][$horaCompleta]);
-                print_r("<br>");
-        }
-        elseif (date("N") == 4) 
-        {
-                print_r($horario["Jueves"][$horaCompleta]);
-                print_r("<br>");
-        }
-        elseif (date("N") == 5) 
-        {
-                print_r($horario["Viernes"][$horaCompleta]);
+                print_r("No tienes ninguna clase ahora mismo.");
                 print_r("<br>");
         }
 };
 
 queTengoAhora();
+mostrarHorario();
