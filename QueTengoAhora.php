@@ -215,46 +215,45 @@ function queTengoAhora()
                 if(date("N") == 1)
                 {
                         print_r($horario["Lunes"][queClaseToca(date("H") - 1, date("i"))]);
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 elseif (date("N") == 2) 
                 {
                         print_r($horario["Martes"][queClaseToca(date("H") - 1, date("i"))]);
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 elseif (date("N") == 3) 
                 {
                         print_r($horario["Miercoles"][queClaseToca(date("H") - 1, date("i"))]);
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 elseif (date("N") == 4) 
                 {
                         print_r($horario["Jueves"][queClaseToca(date("H") - 1, date("i"))]);
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 elseif (date("N") == 5) 
                 {
                         print_r($horario["Viernes"][queClaseToca(date("H") - 1, date("i"))]);
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 elseif(date("N") == 6)
                 {
                         print_r("Los sabados no hay clase");
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
                 else
                 {
                         print_r("Los domingos no hay clase");
-                        print_r("<br>");
+                        print_r("<br><br><br><br>");
                 }
         }
         else
         {
                 print_r("No tienes ninguna clase ahora mismo.");
-                print_r("<br>");
+                print_r("<br><br><br><br>");
         }
 };
-
 //queTengoAhora();
 //mostrarHorario();
 
