@@ -1,5 +1,11 @@
+<html>
+<head>
+        <title>Horario en tabla HTML</title>
+        <style>
+                td, th, tr, table {border: 2px solid black}
+        </style>
+</head>
 <?php
-
 $horario = array(
     "Lunes"=>array(1=>array("Modulo"=>"Empresa e iniciativa emprendedora", "Docente"=>"María del Sol García Tarajano", "Aula"=>"201"),
                 2=>array("Modulo"=>"Desarrollo web en entorno servidor", "Docente"=>"Sergio Ramos Suarez", "Aula"=>"201"),
@@ -249,5 +255,20 @@ function queTengoAhora()
         }
 };
 
-queTengoAhora();
-mostrarHorario();
+//queTengoAhora();
+//mostrarHorario();
+
+?>
+
+<body>
+       <table>
+                <tr></tr>
+
+
+
+
+
+
+       </table> 
+</body>
+</html>
